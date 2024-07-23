@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game-container{
+    width:400px;
+    height:500px;
+    border:1px solid black;
+    overflow: auto;
+    
+}
+.game-container::-webkit-scrollbar{display:none;}
+
+.game-sky{
+    height:80%;
+    background-color: skyblue;
+    position:relative;
+    width:1200px;
+}
+.mario{
+    width:30px;
+    height:30px;
+    background-color:black;
+    position:absolute;
+    bottom:0;
+}
+.block1,.block2,.block3{
+    width:30px;
+    height:30px;
+    position:absolute;
+    
+}
+.block1{
+    background-color:pink;
+    left:250px;
+}
+.block2{
+    background-color:orange;
+    left:600px;
+}
+.block3{
+    background-color:red;
+    left:1000px;
+}
+.game-ground{
+    height:20%;
+    background-color: brown;
+    width:1200px;
+}
