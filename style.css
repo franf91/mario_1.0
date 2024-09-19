@@ -14,9 +14,8 @@ body{
     justify-content: center;
 }
 .game-container{
-    width:400px;
-    height:500px;
-    border:1px solid black;
+    width:650px;
+    height:512px;   
     overflow: auto;
     
 }
@@ -26,35 +25,100 @@ body{
     height:80%;
     background-color: skyblue;
     position:relative;
-    width:1200px;
+    width:6656px;
 }
 .mario{
-    width:30px;
-    height:30px;
+    width: 32px;
+    height:32px;
     background-color:black;
     position:absolute;
     bottom:0;
-}
-.block1,.block2,.block3{
-    width:30px;
-    height:30px;
-    position:absolute;
     
 }
-.block1{
+.blockA,.blockB,.block1,.block2,.block3,.block4,.block5,.block6,.block7,.block8,.block9{
+    width:32px;
+    height:32px;
+    position:absolute;
     background-color:pink;
-    left:250px;
+    border:1px solid black;
+    
+}
+.blockA{
+    bottom:112px;
+}
+.blockB{
+    bottom:224px;
+}
+.block1{
+    bottom:0px;
 }
 .block2{
-    background-color:orange;
-    left:600px;
+    bottom:32px;
 }
 .block3{
-    background-color:red;
-    left:1000px;
+    bottom:64px;
 }
+.block4{
+    bottom:96px;
+}
+.block5{
+    bottom:128px;
+}
+.block6{
+    bottom:160px;
+}
+.block7{
+    bottom:192px;
+}
+.block8{
+    bottom:224px;
+}
+.block9{
+    bottom:256px;
+}
+
+
+
+
+.tube1{
+    width:60px;
+    height:80px;
+    position:absolute;
+    background-color:green;
+    border:1px solid black;
+    bottom:0px;
+}
+
 .game-ground{
     height:20%;
+    display:flex;
+    width:6656px;
+}
+.game-ground-s1{
+ background-color: brown;
+ width:1968px;
+}
+.game-ground-s2{
+    background-color: skyblue;
+    width:96px;
+}
+.game-ground-s3{
     background-color: brown;
-    width:1200px;
+    width:432px;
+}
+.game-ground-s4{
+    background-color: skyblue;
+    width:128px;
+}
+.game-ground-s5{
+    background-color: brown;
+    width:2121px;
+}
+.game-ground-s6{
+    background-color: skyblue;
+    width:64px;
+}
+.game-ground-s7{
+    background-color: brown;
+    width:1847px;
 }
