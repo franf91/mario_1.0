@@ -1,11 +1,10 @@
 
-import { MarioMovement } from "./mario.js";
+import { MarioMovement} from "./mario.js";
 
 const gameContainer = document.getElementById("game-container");
 const mario = document.getElementById("mario");
 const sky = document.getElementById("sky");
-const maxDistance = 5120;
-const blockSize = 32;
+
 
 const blockPos1 = [350,450, 482, 514, 546, 578,2216,2248,2280,2782,2982,3014,3164,3264,3364,3564,3960,3992,5254,5286,5318,5350];
 const blockPos2 = [514,2312,2344,2376,2408,2440,2472,2504,2536,2686,2718,2750,2782,3264,3664,3696,3728,3928,3960,3992,4024];
@@ -25,7 +24,8 @@ let gameCenter = gameLeft + gameContainerWidth/2 - marioWidth/2
 let keys = {};
 let blocksA = [];
 let blocksB= [];
-let tubes = []
+let tubes = [];
+
 
 
 const game = {
@@ -38,18 +38,21 @@ const game = {
     marioPositionX:0,
     marioPositionY:0,
     position:0,
-    gravity:2,
+    gravity:2.5,
     ground:0,
     ceiling:-144,
-    pressRight:false,
-    pressLeft:false,
+    rightPress:false,
+    leftPress:false,
     jumpPress:false,
     jumpCeiling:false,
     closeBoundary:false,
     topBlock:false,
     blocksA:blocksA,
     blocksB:blocksB,
-    tubes:tubes
+    tubes:tubes,
+    signX:0,
+    signY:0
+
 }
 
 
@@ -121,8 +124,6 @@ for(let i = 0 ; i < stairPos3.length; i++){
    
     for(let j = 0; j < i+1; j++){
 
-        console.log(`block${stairPos3.length - i}`);
-        console.log(stairPos3[stairPos3.length - j - 1])
 
         let block = document.createElement('div');
         block.className = `block${stairPos3.length - i}`;
@@ -161,31 +162,6 @@ for(let i = 0 ; i < stairPos5.length; i++){
    }
 }
 
-for(let i = 0 ; i < 4; i++){
-     let s1 = ""
-    
-     for(let j = 0; j < i+1; j++){
-        s1 = s1 + "*";
-        
-    }
-    console.log(s1);
-    console.log("\n");
-}
-
-for(let i = 0 ; i < 4; i++){
-    let s1 = ""
-
-    for(let k = 4; k > i+1; k--){
-        s1 = s1 + " ";
-    }
-   
-    for(let j = 0; j < i+1; j++){
-       s1 = s1 + "*";
-       
-   }
-   console.log(s1);
-   console.log("\n");
-}
 
 
 
@@ -195,13 +171,11 @@ window.addEventListener("resize",()=>{
 
 window.addEventListener("keydown",(event)=>{
     keys[event.key] = true;
-    
-    
+
 });
 
 window.addEventListener("keyup",(event)=>{
     keys[event.key] = false;
-    
 });
 
 function PlayerMovement(){
